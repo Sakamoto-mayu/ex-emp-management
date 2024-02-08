@@ -1,5 +1,7 @@
 package com.example.domain;
 
+import com.example.form.InsertAdministerForm;
+
 public class Administer {
     /**
      * 管理者ID
@@ -32,11 +34,14 @@ public class Administer {
      * @param mailAddress
      * @param password
      */
-    public Administer(String name, String mailAddress, String password) {
-
+    public Administer(Integer id, String name, String mailAddress, String password) {
+        this.id = id;
         this.name = name;
         this.mailAddress = mailAddress;
         this.password = password;
+    }
+
+    public Administer(InsertAdministerForm form) {
     }
 
     public Integer getId() {

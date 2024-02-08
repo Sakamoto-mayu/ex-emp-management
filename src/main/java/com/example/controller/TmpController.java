@@ -92,10 +92,26 @@ public class TmpController {
      * @param model
      * @return
      */
+    // @GetMapping("/")
+    // public String index(Model model) {
+    // Administer administer =
+    // repository.findByMailAddressAndPassword("iga@sample.com", "testtest");
+    // model.addAttribute("administer", administer);
+    // return "tmp";
+    // }
+
+    /**
+     * AdministerRepoのLOAD
+     * 
+     * @param model
+     * @return
+     */
     @GetMapping("/")
     public String index(Model model) {
-        Administer administer = repository.findByMailAddressAndPassword("iga@sample.com", "testtest");
+
+        Administer administer = repository.load(2);
         model.addAttribute("administer", administer);
         return "tmp";
     }
+
 }
