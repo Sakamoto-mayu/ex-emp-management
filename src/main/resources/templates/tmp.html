@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完了画面</title>
+</head>
+
+<body>
+    <!-- <section>
+        <h1>検索条件</h1>
+        <form action="finished.html" th:action="@{/employee/form}" method="post">
+            所属部署：<input type="text" name="department_id" id="department_id">
+            性別：<input type="text" name="gender" id="gender">
+            <button>検索</button>
+        </form>
+
+    </section> -->
+
+    <section>
+        <h1>リスト</h1>
+        <ul th:each="employee:${employees}">
+            <li th:text="${employee.name}">ダミー</li>
+        </ul>
+    </section>
+</body>
+
+</html>
