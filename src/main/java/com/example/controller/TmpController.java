@@ -8,9 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.domain.Administer;
+import com.example.domain.Administrator;
 import com.example.domain.Employee;
-import com.example.repository.AdministerRepository;
+import com.example.repository.AdministratorRepository;
 import com.example.repository.EmployeeRepository;
 
 @Controller
@@ -19,7 +19,7 @@ public class TmpController {
 
     @Autowired
     // private EmployeeRepository repository;
-    private AdministerRepository repository;
+    private AdministratorRepository repository;
 
     /**
      * EmployeeRepositoryのFIND_ALL
@@ -69,39 +69,40 @@ public class TmpController {
     // }
 
     /**
-     * AdministerRepoのINSERT
+     * AdministratorRepoのINSERT
      * 
      * @param model
      * @return
      */
     // @GetMapping("/")
     // public String index(Model model) {
-    // Administer argAdminister = new Administer("アドミン太郎", "taro@sample.com",
+    // Administrator argAdministrator = new Administrator("アドミン太郎",
+    // "taro@sample.com",
     // "testtest");
 
-    // repository.insert(argAdminister);
+    // repository.insert(argAdministrator);
 
-    // Administer administer = repository.load(2);
-    // model.addAttribute("administer", administer);
+    // Administrator administrator = repository.load(2);
+    // model.addAttribute("administrator", administrator);
     // return "tmp";
     // }
 
     /**
-     * AdministerRepositoryのFIND_BY_MAIL_AND_PASSWORD
+     * AdministratorRepositoryのFIND_BY_MAIL_AND_PASSWORD
      * 
      * @param model
      * @return
      */
     // @GetMapping("/")
     // public String index(Model model) {
-    // Administer administer =
+    // Administrator administrator =
     // repository.findByMailAddressAndPassword("iga@sample.com", "testtest");
-    // model.addAttribute("administer", administer);
+    // model.addAttribute("administrator", administrator);
     // return "tmp";
     // }
 
     /**
-     * AdministerRepoのLOAD
+     * AdministratorRepoのLOAD
      * 
      * @param model
      * @return
@@ -109,8 +110,8 @@ public class TmpController {
     @GetMapping("/")
     public String index(Model model) {
 
-        Administer administer = repository.load(2);
-        model.addAttribute("administer", administer);
+        Administrator administrator = repository.load(2);
+        model.addAttribute("administrator", administrator);
         return "tmp";
     }
 

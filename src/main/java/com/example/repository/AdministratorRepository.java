@@ -10,10 +10,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.example.domain.Administer;
+import com.example.domain.Administrator;
 
 @Repository
-public class AdministerRepository {
+public class AdministratorRepository {
     /**
      * SQL
      */
@@ -32,13 +32,13 @@ public class AdministerRepository {
             WHERE mail_address = :mailAddress AND password = :password
                 """;
 
-    private static final RowMapper<Administer> ADMINISTER_ROW_MAPPER = (rs, rowNum) -> {
-        Administer administer = new Administer();
-        administer.setId(rs.getInt("id"));
-        administer.setName(rs.getString("name"));
-        administer.setMailAddress(rs.getString("mail_address"));
-        administer.setPassword(rs.getString("password"));
-        return administer;
+    private static final RowMapper<Administrator> ADMINISTRATOR_ROW_MAPPER = (rs, rowNum) -> {
+        Administrator administrator = new Administrator();
+        administrator.setId(rs.getInt("id"));
+        administrator.setName(rs.getString("name"));
+        administrator.setMailAddress(rs.getString("mail_address"));
+        administrator.setPassword(rs.getString("password"));
+        return administrator;
     };
 
     @Autowired
@@ -47,8 +47,8 @@ public class AdministerRepository {
     /**
      * INSERT
      */
-    public void insert(Administer administer) {
-        SqlParameterSource params = new BeanPropertySqlParameterSource(administer);
+    public void insert(Administrator administrator) {
+        SqlParameterSource params = new BeanPropertySqlParameterSource(administrator);
         template.update(INSERT, params);
     }
 
@@ -58,18 +58,18 @@ public class AdministerRepository {
      * @param id
      * @return
      */
-    public Administer load(Integer id) {
+    public Administrator load(Integer id) {
         MapSqlParameterSource params = new MapSqlParameterSource().addValue("id", id);
-        return template.queryForObject(LOAD, params, ADMINISTER_ROW_MAPPER);
+        return template.queryForObject(LOAD, params, ADMINISTRATOR_ROW_MAPPER);
     }
 
-    public Administer findByMailAddressAndPassword(String mailAddress, String password) {
+    public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
         SqlParameterSource params = new MapSqlParameterSource()
                 .addValue("mailAddress", mailAddress).addValue("password", password);
-        List<Administer> administerList = template.query(FIND_BY_MAIL_PASSWORD, params, ADMINISTER_ROW_MAPPER);
-        if (administerList.size() == 0) {
+        List<Administrator> administratorList = template.query(FIND_BY_MAIL_PASSWORD, params, ADMINISTRATOR_ROW_MAPPER);
+        if (administratorList.size() == 0) {
             return null;
         }
-        return administerList.get(0);
+        return administratorList.get(0);
     }
 }

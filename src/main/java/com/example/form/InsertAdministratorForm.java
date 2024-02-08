@@ -1,6 +1,6 @@
 package com.example.form;
 
-public class InsertAdministerForm {
+public class InsertAdministratorForm {
     /**
      * 管理者名
      */
@@ -40,7 +40,8 @@ public class InsertAdministerForm {
 
     @Override
     public String toString() {
-        return "InsertAdministerForm [name=" + name + ", mailAddress=" + mailAddress + ", password=" + password + "]";
+        return "InsertAdministratorForm [name=" + name + ", mailAddress=" + mailAddress + ", password=" + password
+                + "]";
     }
 
 }

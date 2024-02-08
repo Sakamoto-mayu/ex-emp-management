@@ -1,8 +1,8 @@
 package com.example.domain;
 
-import com.example.form.InsertAdministerForm;
+import com.example.form.InsertAdministratorForm;
 
-public class Administer {
+public class Administrator {
     /**
      * 管理者ID
      */
@@ -23,7 +23,7 @@ public class Administer {
     /**
      * 引数なしコンストラクター
      */
-    public Administer() {
+    public Administrator() {
     }
 
     /**
@@ -34,14 +34,11 @@ public class Administer {
      * @param mailAddress
      * @param password
      */
-    public Administer(Integer id, String name, String mailAddress, String password) {
+    public Administrator(Integer id, String name, String mailAddress, String password) {
         this.id = id;
         this.name = name;
         this.mailAddress = mailAddress;
         this.password = password;
-    }
-
-    public Administer(InsertAdministerForm form) {
     }
 
     public Integer getId() {
@@ -78,7 +75,7 @@ public class Administer {
 
     @Override
     public String toString() {
-        return "Administer [id=" + id + ", name=" + name + ", mailAddress=" + mailAddress + ", password=" + password
+        return "Administrator [id=" + id + ", name=" + name + ", mailAddress=" + mailAddress + ", password=" + password
                 + "]";
     }
 
