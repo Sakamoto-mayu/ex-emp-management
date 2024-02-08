@@ -32,8 +32,8 @@ public class Administer {
      * @param mailAddress
      * @param password
      */
-    public Administer(Integer id, String name, String mailAddress, String password) {
-        this.id = id;
+    public Administer(String name, String mailAddress, String password) {
+
         this.name = name;
         this.mailAddress = mailAddress;
         this.password = password;
