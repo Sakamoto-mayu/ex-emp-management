@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.Administrator;
 import com.example.form.InsertAdministratorForm;
-import com.example.repository.AdministratorRepository;
+import com.example.form.LoginForm;
 import com.example.service.AdministratorService;
 
 @Controller
@@ -18,10 +18,6 @@ public class AdministratorController {
 
     @Autowired
     private AdministratorService administratorService;
-
-    @Autowired
-    // private EmployeeRepository repository;
-    private AdministratorRepository repository;
 
     @GetMapping("/toInsert")
     public String toInsert(InsertAdministratorForm form) {
@@ -40,5 +36,10 @@ public class AdministratorController {
 
         administratorService.insert(administrator);
         return "redirect:/";
+    }
+
+    @GetMapping("/")
+    public String toLogin(LoginForm form) {
+        return "administrator/login";
     }
 }
