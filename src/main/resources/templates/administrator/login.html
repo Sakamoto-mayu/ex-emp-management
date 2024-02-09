@@ -34,7 +34,7 @@
               <legend>ログイン</legend>
               <div class="form-group">
                 <div class="alert alert-danger">
-                  <p>メールアドレスまたはパスワードが間違っています</p>
+                  <p th:if="${errMessage}" th:text="${errMessage}">メールアドレスまたはパスワードが間違っています</p>
                 </div>
               </div>
               <div class="form-group">
@@ -52,6 +52,7 @@
                   ログイン
                 </button>
               </div>
+
               <div class="form-group">
                 <a href="insert.html" th:href="@{/toInsert}">管理者登録はこちらから</a>
               </div>
